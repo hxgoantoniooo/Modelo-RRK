@@ -6,7 +6,6 @@ def load_data_csv(data_file, config_file=None):
     data = pd.read_csv(data_file, header=None).to_numpy()
     X = data[:, :-1]
     Y = data[:, -1]
-    Y = -Y
     if config_file:
         with open(config_file) as f:
             sigma2 = float(f.readline())
